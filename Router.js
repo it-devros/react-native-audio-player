@@ -2,30 +2,36 @@ import React from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
-
 import {
-  createAppContainer
-} from 'react-navigation'
+  Dimensions
+} from 'react-native'
 
-import {
-  createStackNavigator
-} from 'react-navigation-stack'
+import { createAppContainer } from 'react-navigation'
 
+import { createStackNavigator } from 'react-navigation-stack'
+import { createDrawerNavigator } from 'react-navigation-drawer'
 
 import {
   PlayList
 } from './src/screens'
 
 import {
-  normalize
-} from './src/helpers'
+  Menu
+} from './src/shares'
 
 
-const MainStack = {
+const { width } = Dimensions.get('window')
+
+
+const DrawerScreens = {
   PlayList: { screen: PlayList }
 }
 
-
+const DrawerStack = createDrawerNavigator(DrawerScreens, {
+  drawerWidth: width * 2 / 3,
+  drawerPosition: 'right',
+  contentComponent: Menu
+})
 
 
 
@@ -35,7 +41,10 @@ const MainStack = {
 
 
 const AppNavigator = createStackNavigator({
-  ...MainStack
+  Drawer: {
+    name: 'Drawer',
+    screen: DrawerStack,
+  }
 }, {
   mode: 'modal',
   headerMode: 'none',
