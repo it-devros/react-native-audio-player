@@ -7,6 +7,9 @@ import {
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
+import {
+  Header
+} from '../../shares'
 
 import {
   commonActions,
@@ -43,8 +46,8 @@ class PlayList extends React.Component {
   render() {
 
     return(
-      <View>
-
+      <View style={styles.container}>
+        <Header {...this.props}/>
       </View>
     )
 
