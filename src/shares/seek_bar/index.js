@@ -25,7 +25,6 @@ class SeekBar extends React.Component {
           <Text style={styles.text}>
             {`00 : 00`}
           </Text>
-          <View style={styles.flex1} />
           <Text style={styles.text}>
             {`00 : 00`}
           </Text>
