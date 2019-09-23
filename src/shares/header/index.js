@@ -1,6 +1,9 @@
 import React from 'react'
 import {
-  View
+  View,
+  Image,
+  Text,
+  TouchableOpacity
 } from 'react-native'
 
 
@@ -17,9 +20,17 @@ class Header extends React.Component {
 
   render() {
 
-    return(
-      <View>
+    const { navigation } = this.props
 
+    return(
+      <View style={styles.container}>
+        <Image style={styles.logoImage} source={require('../../assets/icons/logo.png')} />
+        <View style={styles.titleSection}>
+          <Image style={styles.titleImage} source={require('../../assets/icons/title.png')} />
+        </View>
+        <TouchableOpacity onPress={() => navigation.openDrawer()}>
+          <Image style={styles.menuIcon} source={require('../../assets/icons/list.png')} />
+        </TouchableOpacity>
       </View>
     )
 
