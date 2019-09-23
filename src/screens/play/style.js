@@ -28,6 +28,12 @@ const styles = StyleSheet.create({
     flex: 1,
     width: width
   },
+  playerContent: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingTop: normalize(30),
+    paddingBottom: normalize(30)
+  },
   topImage: {
     width: '100%',
     height: '100%'

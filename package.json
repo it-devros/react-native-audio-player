@@ -5,6 +5,7 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start --reset-cache",
     "android": "node node_modules/react-native/local-cli/cli.js run-android",
+    "build:android": "node node_modules/react-native/local-cli/cli.js run-android --variant=release",
     "ios": "node node_modules/react-native/local-cli/cli.js run-ios",
     "test": "jest",
     "lint": "eslint ."

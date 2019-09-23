@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingTop: normalize(8),
+    paddingTop: normalize(10),
   },
   playButton: {
     height: normalize(72),
