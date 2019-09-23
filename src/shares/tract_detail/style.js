@@ -49,8 +49,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   moreButtonIcon: {
-    height: normalize(25),
-    width: normalize(25),
+    height: normalize(20),
+    width: normalize(20),
   }
 })
 

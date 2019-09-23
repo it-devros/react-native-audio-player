@@ -11,33 +11,29 @@ import {
 const { height, width } = Dimensions.get('window')
 
 const styles = StyleSheet.create({
-  flexDirectionRow: {
-    flexDirection: 'row',
-    marginBottom: normalize(15)
-  },
-  flex1: {
-    flex: 1
-  },
-  width40: {
-    width: normalize(40)
-  },
-  slider: {
-    marginTop: normalize(-15),
-  },
   container: {
     paddingLeft: normalize(15),
     paddingRight: normalize(15),
     paddingTop: normalize(15),
     width: width
   },
+  flexDirectionRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: normalize(15)
+  },
+  slider: {
+    marginTop: normalize(-15),
+  },
   track: {
-    height: normalize(2),
-    borderRadius: normalize(1),
+    height: normalize(3),
+    borderRadius: normalize(3),
   },
   thumb: {
-    width: normalize(10),
-    height: normalize(10),
-    borderRadius: normalize(5),
+    width: normalize(15),
+    height: normalize(15),
+    borderRadius: normalize(15),
     backgroundColor: 'white',
   },
   text: {

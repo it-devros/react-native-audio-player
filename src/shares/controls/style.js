@@ -18,17 +18,21 @@ const styles = StyleSheet.create({
     paddingTop: normalize(10),
   },
   playButton: {
-    height: normalize(72),
-    width: normalize(72),
-    borderWidth: normalize(1),
+    height: normalize(80),
+    width: normalize(80),
+    borderWidth: normalize(2),
     borderColor: 'white',
-    borderRadius: normalize(72) / 2,
+    borderRadius: normalize(40),
     alignItems: 'center',
     justifyContent: 'center',
   },
+  primaryControl: {
+    height: normalize(25),
+    width: normalize(25),
+  },
   secondaryControl: {
-    height: normalize(18),
-    width: normalize(18),
+    height: normalize(20),
+    width: normalize(20),
   },
   off: {
     opacity: 0.30,

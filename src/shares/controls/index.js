@@ -24,25 +24,25 @@ class Controls extends React.Component {
     return(
       <View style={styles.container}>
         <TouchableOpacity activeOpacity={0.0}>
-          <Image style={styles.secondaryControl} source={require('../../assets/icons/repeat.png')}/>
+          <Image style={styles.secondaryControl} source={require('../../assets/icons/shuffle.png')}/>
         </TouchableOpacity>
         <View style={styles.width40} />
         <TouchableOpacity>
-          <Image source={require('../../assets/icons/prev.png')}/>
+          <Image style={styles.primaryControl} source={require('../../assets/icons/prev.png')}/>
         </TouchableOpacity>
         <View style={styles.width20} />
         <TouchableOpacity>
           <View style={styles.playButton}>
-            <Image source={require('../../assets/icons/play_white.png')}/>
+            <Image style={styles.primaryControl} source={require('../../assets/icons/play_white.png')}/>
           </View>
         </TouchableOpacity>
         <View style={styles.width20} />
         <TouchableOpacity>
-          <Image source={require('../../assets/icons/next.png')}/>
+          <Image style={styles.primaryControl} source={require('../../assets/icons/next.png')}/>
         </TouchableOpacity>
         <View style={styles.width40} />
         <TouchableOpacity activeOpacity={0.0}>
-          <Image style={styles.secondaryControl} source={require('../../assets/icons/loop.png')}/>
+          <Image style={styles.secondaryControl} source={require('../../assets/icons/repeat.png')}/>
         </TouchableOpacity>
       </View>
     )
