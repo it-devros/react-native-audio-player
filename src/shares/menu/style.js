@@ -14,9 +14,48 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: width * 2 / 3,
-    alignItems: 'flex-start',
+    alignItems: 'center',
     justifyContent: 'flex-start',
-    backgroundColor: '#333333'
+    backgroundColor: '#429321',
+  },
+  titleItem: {
+    padding: normalize(10),
+    alignItems: 'center'
+  },
+  titleText: {
+    fontSize: normalize(22),
+    color: '#ffffff',
+    fontWeight: 'bold',
+    textAlign: 'center'
+  },
+  divider: {
+    height: normalize(3),
+    width: width * 2 / 3,
+    backgroundColor: '#ffffff'
+  },
+  navItem: {
+    paddingLeft: normalize(10),
+    paddingRight: normalize(10),
+    paddingTop: normalize(30)
+  },
+  navText: {
+    fontSize: normalize(18),
+    fontWeight: 'bold',
+    color: '#ffffff',
+    textAlign: 'center'
+  },
+  menuContainer: {
+    alignItems: 'center',
+    justifyContent: 'space-between'
+  },
+  menuContent: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'flex-start'
+  },
+  footerImage: {
+    width: width * 2 / 3,
+    height: width * 2 * 438 / (3 * 745)
   }
 })
 

@@ -11,16 +11,26 @@ import {
 const { height, width } = Dimensions.get('window')
 
 const styles = StyleSheet.create({
-  backImage: {
-    width: '100%',
-    height: '100%'
-  },
   container: {
     flex: 1,
     width: width,
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
-    backgroundColor: 'rgba(0,0,0, 0.5)'
+    backgroundColor: '#000000'
+  },
+  mainContainer: {
+    flex: 1,
+    width: width,
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start'
+  },
+  itemContent: {
+    flex: 1,
+    width: width
+  },
+  topImage: {
+    width: '100%',
+    height: '100%'
   }
 })
 

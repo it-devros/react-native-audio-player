@@ -1,14 +1,16 @@
 import React from 'react'
 import {
   View,
-  Text
+  ImageBackground,
+  ScrollView
 } from 'react-native'
 
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 import {
-  Header
+  Header,
+  AudioItem
 } from '../../shares'
 
 import {
@@ -41,14 +43,34 @@ class PlayList extends React.Component {
     this.state = {
     }
 
+    this.startPlay = this.startPlay.bind(this)
+
+  }
+
+  startPlay(audio_id) {
+    this.props.navigation.navigate('Play')
   }
 
   render() {
 
     return(
-      <View style={styles.container}>
-        <Header {...this.props}/>
-      </View>
+      <ImageBackground style={styles.backImage} source={require('../../assets/images/background_play_list.png')}>
+        <View style={styles.container}>
+          <Header {...this.props}/>
+          <ScrollView>
+            <AudioItem onPress={this.startPlay} />
+            <AudioItem onPress={this.startPlay} />
+            <AudioItem onPress={this.startPlay} />
+            <AudioItem onPress={this.startPlay} />
+            <AudioItem onPress={this.startPlay} />
+            <AudioItem onPress={this.startPlay} />
+            <AudioItem onPress={this.startPlay} />
+            <AudioItem onPress={this.startPlay} />
+            <AudioItem onPress={this.startPlay} />
+            <AudioItem onPress={this.startPlay} />
+          </ScrollView>
+        </View>
+      </ImageBackground>
     )
 
   }
