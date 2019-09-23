@@ -57,7 +57,7 @@ class Play extends React.Component {
             <ImageBackground style={styles.topImage} source={require('../../assets/images/play.png')}>
             </ImageBackground>
           </View>
-          <View style={styles.itemContent}>
+          <View style={styles.playerContent}>
             <TrackDetail />
             <SeekBar />
             <Controls />

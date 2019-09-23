@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
     paddingLeft: normalize(15),
     paddingRight: normalize(15),
     paddingTop: normalize(15),
+    width: width
   },
   track: {
     height: normalize(2),

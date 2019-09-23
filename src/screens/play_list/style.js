@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     width: width,
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
-    backgroundColor: 'rgba(0,0,0, 0.5)'
+    backgroundColor: 'rgba(0,0,0, 0.9)'
   }
 })
 

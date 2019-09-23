@@ -12,7 +12,6 @@ const { height, width } = Dimensions.get('window')
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: normalize(30),
     flexDirection: 'row',
     paddingLeft: normalize(20),
     alignItems: 'center',
