@@ -13,7 +13,10 @@ import { createDrawerNavigator } from 'react-navigation-drawer'
 
 import {
   PlayList,
-  Play
+  Play,
+  TopChart,
+  AboutCompany,
+  TermsConditions
 } from './src/screens'
 
 import {
@@ -26,7 +29,10 @@ const { width } = Dimensions.get('window')
 
 const DrawerScreens = {
   PlayList: { screen: PlayList },
-  Play: { screen: Play }
+  Play: { screen: Play },
+  TopChart: { screen: TopChart },
+  AboutCompany: { screen: AboutCompany },
+  TermsConditions: { screen: TermsConditions }
 }
 
 const DrawerStack = createDrawerNavigator(DrawerScreens, {
