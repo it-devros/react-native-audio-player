@@ -11,12 +11,15 @@ import {
 const { height, width } = Dimensions.get('window')
 
 const styles = StyleSheet.create({
+  backImage: {
+    width: '100%',
+    height: '100%'
+  },
   container: {
     flex: 1,
     width: width * 2 / 3,
     alignItems: 'center',
-    justifyContent: 'flex-start',
-    backgroundColor: '#429321',
+    justifyContent: 'flex-start'
   },
   titleItem: {
     padding: normalize(10),
