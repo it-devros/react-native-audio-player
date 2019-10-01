@@ -32,7 +32,9 @@ const mapDispatchToProps = (dispatch) => {
 const mapStateToProps = (state) => {
   return ({
     loading: state.common.loading,
-    label: state.common.label
+    label: state.common.label,
+
+    about_company_content: state.user.about_company_content
   })
 }
 
@@ -45,6 +47,10 @@ class AboutCompany extends React.Component {
 
   }
 
+  componentDidMount() {
+    this.props.userActions.getAboutCompanyContent()
+  }
+
   render() {
 
     return(
@@ -55,7 +61,8 @@ class AboutCompany extends React.Component {
             <ScrollView>
               <Text style={styles.titleText}>About Company</Text>
               <Text style={styles.descriptionText}>
-                Lorem ipsum dolor sit amet, ne qui dicit gloriatur, vim et natum altera dignissim. Doming cotidieque ut has, pri ei sumo quaeque, sit alterum theophrastus deterruisset te. Et accumsan facilisis cum, nec id aliquando honestatis. Cu sonet simul maiorum mea. Vel modo praesent te.
+                This is from firebase realtime database. ----
+                { this.props.about_company_content }
               </Text>
               <Text style={styles.descriptionText}>
                 Lorem ipsum dolor sit amet, ne qui dicit gloriatur, vim et natum altera dignissim. Doming cotidieque ut has, pri ei sumo quaeque, sit alterum theophrastus deterruisset te. Et accumsan facilisis cum, nec id aliquando honestatis. Cu sonet simul maiorum mea. Vel modo praesent te.

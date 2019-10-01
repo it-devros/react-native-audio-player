@@ -3,7 +3,10 @@ import { USER } from '../../configs/types'
 
 const initState = {
   is_authed: false,
-  token: ''
+  token: '',
+
+  play_list: [],
+  about_company_content: ''
 }
 
 
@@ -23,6 +26,18 @@ const user = (state = initState, action) => {
         ...state,
         is_authed: false,
         token: ''
+      }
+    
+    case USER.SET_PLAY_LIST:
+      return {
+        ...state,
+        play_list: Object.assign([], payload.data)
+      }
+
+    case USER.SET_ABOUT_COMPANY:
+      return {
+        ...state,
+        about_company_content: payload.data
       }
 
     default:

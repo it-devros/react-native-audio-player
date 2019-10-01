@@ -27,7 +27,7 @@ class Menu extends React.Component {
   render() {
 
     return(
-      <ImageBackground style={styles.backImage} source={require('../../assets/images/menuBack.png')}>
+      <ImageBackground style={styles.backImage} source={require('../../assets/images/menuBack.jpg')}>
         <View style={styles.container}>
           <View style={styles.titleItem}>
             <Text style={styles.titleText}>Menu</Text>
@@ -60,7 +60,7 @@ class Menu extends React.Component {
                 </TouchableOpacity>
               </View>
             </View>
-            <Image style={styles.footerImage} source={require('../../assets/images/pin_chart.png')} />
+            {/* <Image style={styles.footerImage} source={require('../../assets/images/pin_chart.png')} /> */}
           </View>
         </View>
       </ImageBackground>

@@ -32,7 +32,9 @@ const mapDispatchToProps = (dispatch) => {
 const mapStateToProps = (state) => {
   return ({
     loading: state.common.loading,
-    label: state.common.label
+    label: state.common.label,
+
+    play_list: state.user.play_list
   })
 }
 
@@ -46,7 +48,11 @@ class TopChart extends React.Component {
     this.startPlay = this.startPlay.bind(this)
   }
 
-  startPlay(audio_id) {
+  componentDidMount() {
+    this.props.userActions.getPlayList()
+  }
+
+  startPlay(item) {
     this.props.navigation.navigate('Play')
   }
 
@@ -57,18 +63,30 @@ class TopChart extends React.Component {
       <ImageBackground style={styles.backImage} source={require('../../assets/images/background_play_list.png')}>
         <View style={styles.container}>
           <Header {...this.props}/>
-          <ScrollView>
-            <AudioItem onPress={this.startPlay} />
-            <AudioItem onPress={this.startPlay} />
-            <AudioItem onPress={this.startPlay} />
-            <AudioItem onPress={this.startPlay} />
-            <AudioItem onPress={this.startPlay} />
-            <AudioItem onPress={this.startPlay} />
-            <AudioItem onPress={this.startPlay} />
-            <AudioItem onPress={this.startPlay} />
-            <AudioItem onPress={this.startPlay} />
-            <AudioItem onPress={this.startPlay} />
-          </ScrollView>
+          {
+            this.props.play_list.length > 0 ?
+              <View style={styles.listContainer}>
+                <ScrollView>
+                  {
+                    this.props.play_list.map((item, index) => {
+                      if (item.top_chart == 'Yes') {
+                        return (
+                          <AudioItem
+                            key={`play_item_${index}`}
+                            item={item}
+                            onPress={this.startPlay}
+                          />
+                        )
+                      }
+                    })
+                  }
+                </ScrollView>
+              </View>
+            :
+              <View style={styles.mainContent}>
+                <Text style={styles.alertText}>No Data</Text>
+              </View>
+          }
         </View>
       </ImageBackground>
     )
