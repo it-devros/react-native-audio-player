@@ -21,6 +21,20 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
     backgroundColor: 'rgba(0,0,0, 0.9)'
+  },
+  mainContent: {
+    flex: 1,
+    width: width,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  alertText: {
+    fontSize: normalize(18),
+    color: '#ffffff'
+  },
+  listContainer: {
+    flex: 1,
+    width: width
   }
 })
 

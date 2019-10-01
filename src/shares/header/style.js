@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#42c000'
   },
   logoImage: {
-    width: normalize(30),
+    width: normalize(30) * 1243 / 927,
     height: normalize(30)
   },
   titleImage: {

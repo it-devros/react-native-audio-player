@@ -20,17 +20,19 @@ class AudioItem extends React.Component {
   }
 
   startPlay() {
-    const { onPress } = this.props
-    onPress('fake')
+    const { onPress, item } = this.props
+    onPress(item)
   }
 
   render() {
+
+    const { item } = this.props
 
     return(
       <View style={styles.container}>
         <Image style={styles.audioIcon} source={require('../../assets/icons/item.png')} />
         <View style={styles.titleSection}>
-          <Text style={styles.titleText} numberOfLines={1}>My Heart Will Go on</Text>
+          <Text style={styles.titleText} numberOfLines={1}>{ item.title }</Text>
         </View>
         <TouchableOpacity onPress={this.startPlay}>
           <Image style={styles.playIcon} source={require('../../assets/icons/play.png')} />

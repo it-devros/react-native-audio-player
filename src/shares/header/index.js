@@ -24,7 +24,7 @@ class Header extends React.Component {
 
     return(
       <View style={styles.container}>
-        <Image style={styles.logoImage} source={require('../../assets/icons/logo.png')} />
+        <Image style={styles.logoImage} source={require('../../assets/images/logo.png')} />
         <View style={styles.titleSection}>
           <Image style={styles.titleImage} source={require('../../assets/icons/title.png')} />
         </View>
