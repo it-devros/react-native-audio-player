@@ -53,6 +53,7 @@ class TopChart extends React.Component {
   }
 
   startPlay(item) {
+    this.props.userActions.setCurrentPlay(item)
     this.props.navigation.navigate('Play')
   }
 
@@ -62,7 +63,7 @@ class TopChart extends React.Component {
     return(
       <ImageBackground style={styles.backImage} source={require('../../assets/images/background_play_list.png')}>
         <View style={styles.container}>
-          <Header {...this.props}/>
+          <Header {...this.props} title={'Top Charts'} />
           {
             this.props.play_list.length > 0 ?
               <View style={styles.listContainer}>

@@ -18,21 +18,33 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: width * 2 / 3,
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
+    backgroundColor: 'rgba(0,0,0, 0.5)'
+  },
+  logoItem: {
+    padding: normalize(10),
+    flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-start'
   },
+  logoImage: {
+    width: normalize(40) * 1243 / 927,
+    height: normalize(40),
+    marginRight: normalize(10)
+  },
   titleItem: {
     padding: normalize(10),
-    alignItems: 'center'
+    alignItems: 'flex-start'
   },
   titleText: {
     fontSize: normalize(22),
     color: '#ffffff',
     fontWeight: 'bold',
-    textAlign: 'center'
+    textAlign: 'left'
   },
   divider: {
-    height: normalize(3),
+    height: normalize(1),
     width: width * 2 / 3,
     backgroundColor: '#ffffff'
   },
@@ -45,20 +57,16 @@ const styles = StyleSheet.create({
     fontSize: normalize(18),
     fontWeight: 'bold',
     color: '#ffffff',
-    textAlign: 'center'
+    textAlign: 'left'
   },
   menuContainer: {
-    alignItems: 'center',
+    alignItems: 'flex-start',
     justifyContent: 'space-between'
   },
   menuContent: {
     flex: 1,
-    alignItems: 'center',
+    alignItems: 'flex-start',
     justifyContent: 'flex-start'
-  },
-  footerImage: {
-    width: width * 2 / 3,
-    height: width * 2 * 438 / (3 * 745)
   }
 })
 

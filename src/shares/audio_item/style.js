@@ -16,11 +16,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    padding: normalize(10),
-    paddingTop: normalize(15),
-    paddingBottom: normalize(15),
-    borderBottomWidth: normalize(1),
-    borderBottomColor: '#f2f2f2'
+    paddingHorizontal: normalize(10),
+    paddingVertical: normalize(10),
+    borderBottomWidth: normalize(0.5),
+    borderBottomColor: '#646666'
   },
   audioIcon: {
     width: normalize(30),

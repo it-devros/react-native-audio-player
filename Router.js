@@ -16,7 +16,8 @@ import {
   Play,
   TopChart,
   AboutCompany,
-  TermsConditions
+  TermsConditions,
+  LivePlay
 } from './src/screens'
 
 import {
@@ -28,6 +29,7 @@ const { width } = Dimensions.get('window')
 
 
 const DrawerScreens = {
+  LivePlay: { screen: LivePlay },
   PlayList: { screen: PlayList },
   Play: { screen: Play },
   TopChart: { screen: TopChart },

@@ -12,23 +12,42 @@ const { height, width } = Dimensions.get('window')
 
 const styles = StyleSheet.create({
   container: {
-    padding: normalize(10),
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     backgroundColor: '#42c000'
   },
   logoImage: {
-    width: normalize(30) * 1243 / 927,
-    height: normalize(30)
+    width: normalize(40) * 1243 / 927,
+    height: normalize(40)
+  },
+  titleText: {
+    fontSize: normalize(20),
+    color: '#ffffff',
+    fontWeight: 'bold'
   },
   titleImage: {
     width: normalize(128),
     height: normalize(24)
   },
-  titleSection: {
+  logoSection: {
     flex: 1,
-    alignItems:'center'
+    paddingHorizontal: normalize(10),
+    paddingVertical: normalize(5),
+    alignItems: 'flex-start'
+  },
+  menuSection: {
+    flex: 1,
+    paddingHorizontal: normalize(10),
+    paddingVertical: normalize(5),
+    alignItems: 'flex-end'
+  },
+  titleSection: {
+    flex: 4,
+    paddingHorizontal: normalize(10),
+    paddingVertical: normalize(5),
+    alignItems:'center',
+    // backgroundColor: '#e2e200'
   },
   menuIcon: {
     width: normalize(30),
