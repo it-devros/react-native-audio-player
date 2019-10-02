@@ -56,7 +56,7 @@ class AboutCompany extends React.Component {
     return(
       <ImageBackground style={styles.backImage} source={require('../../assets/images/background_info.png')}>
         <View style={styles.container}>
-          <Header {...this.props}/>
+          <Header {...this.props} title={'About Company'} />
           <View style={styles.mainContainer}>
             <ScrollView>
               <Text style={styles.titleText}>About Company</Text>

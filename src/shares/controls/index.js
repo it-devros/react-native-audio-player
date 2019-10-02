@@ -21,15 +21,27 @@ class Controls extends React.Component {
 
   render() {
 
+    const { live } = this.props
+
     return(
       <View style={styles.container}>
-        <TouchableOpacity activeOpacity={0.0}>
-          <Image style={styles.secondaryControl} source={require('../../assets/icons/shuffle.png')}/>
-        </TouchableOpacity>
+        {
+          live == false ?
+            <TouchableOpacity activeOpacity={0.0}>
+              <Image style={styles.secondaryControl} source={require('../../assets/icons/shuffle.png')}/>
+            </TouchableOpacity>
+          :
+            null
+        }        
         <View style={styles.width40} />
-        <TouchableOpacity>
-          <Image style={styles.primaryControl} source={require('../../assets/icons/prev.png')}/>
-        </TouchableOpacity>
+        {
+          live == false ?
+            <TouchableOpacity>
+              <Image style={styles.primaryControl} source={require('../../assets/icons/prev.png')}/>
+            </TouchableOpacity>
+          :
+            null
+        }
         <View style={styles.width20} />
         <TouchableOpacity>
           <View style={styles.playButton}>
@@ -37,13 +49,23 @@ class Controls extends React.Component {
           </View>
         </TouchableOpacity>
         <View style={styles.width20} />
-        <TouchableOpacity>
-          <Image style={styles.primaryControl} source={require('../../assets/icons/next.png')}/>
-        </TouchableOpacity>
+        {
+          live == false ?
+            <TouchableOpacity>
+              <Image style={styles.primaryControl} source={require('../../assets/icons/next.png')}/>
+            </TouchableOpacity>
+          :
+            null
+        }
         <View style={styles.width40} />
-        <TouchableOpacity activeOpacity={0.0}>
-          <Image style={styles.secondaryControl} source={require('../../assets/icons/repeat.png')}/>
-        </TouchableOpacity>
+        {
+          live == false ?
+            <TouchableOpacity activeOpacity={0.0}>
+              <Image style={styles.secondaryControl} source={require('../../assets/icons/repeat.png')}/>
+            </TouchableOpacity>
+          :
+            null
+        }
       </View>
     )
 

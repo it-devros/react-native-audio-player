@@ -56,3 +56,14 @@ export const getAboutCompanyContent = () => {
     })
   }
 }
+
+export const setCurrentPlay = (item) => {
+  return (dispatch) => {
+    dispatch({
+      type: USER.SET_CURRENT_PLAY,
+      payload: {
+        data: item
+      }
+    })
+  }
+}

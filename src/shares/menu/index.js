@@ -22,6 +22,7 @@ class Menu extends React.Component {
 
   navigateTo(screen) {
     this.props.navigation.navigate(screen)
+    this.props.navigation.closeDrawer()
   }
 
   render() {
@@ -29,11 +30,18 @@ class Menu extends React.Component {
     return(
       <ImageBackground style={styles.backImage} source={require('../../assets/images/menuBack.jpg')}>
         <View style={styles.container}>
-          <View style={styles.titleItem}>
-            <Text style={styles.titleText}>Menu</Text>
+          <View style={styles.logoItem}>
+            <Image style={styles.logoImage} source={require('../../assets/images/logo.png')} />
+            <Text style={styles.titleText}>Kerala FM</Text>
           </View>
+          <View style={styles.divider}></View>
           <View style={styles.menuContainer}>
             <View style={styles.menuContent}>
+              <View style={styles.navItem}>
+                <TouchableOpacity onPress={() => this.navigateTo('LivePlay')}>
+                  <Text style={styles.navText}>Live Player</Text>
+                </TouchableOpacity>
+              </View>
               <View style={styles.navItem}>
                 <TouchableOpacity onPress={() => this.navigateTo('PlayList')}>
                   <Text style={styles.navText}>Play List</Text>
@@ -60,7 +68,6 @@ class Menu extends React.Component {
                 </TouchableOpacity>
               </View>
             </View>
-            {/* <Image style={styles.footerImage} source={require('../../assets/images/pin_chart.png')} /> */}
           </View>
         </View>
       </ImageBackground>

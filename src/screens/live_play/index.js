@@ -34,14 +34,12 @@ const mapDispatchToProps = (dispatch) => {
 const mapStateToProps = (state) => {
   return ({
     loading: state.common.loading,
-    label: state.common.label,
-
-    current_play: state.user.current_play
+    label: state.common.label
   })
 }
 
 
-class Play extends React.Component {
+class LivePlay extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -51,25 +49,18 @@ class Play extends React.Component {
 
   render() {
 
-    const { current_play } = this.props
-
     return(
       <View style={styles.container}>
-        {
-          current_play == null ?
-            <Header {...this.props} title={'Top Chart'} />
-          :
-            <Header {...this.props} title={current_play.title} />
-        }
+        <Header {...this.props} title={'Live Player'} />
         <View style={styles.mainContainer}>
           <View style={styles.itemContent}>
             <ImageBackground style={styles.topImage} source={require('../../assets/images/play.png')}>
             </ImageBackground>
           </View>
           <View style={styles.playerContent}>
-            <TrackDetail live={false} />
+            <TrackDetail live={true} />
             <SeekBar />
-            <Controls live={false} />
+            <Controls live={true} />
           </View>
         </View>
       </View>
@@ -79,4 +70,4 @@ class Play extends React.Component {
 
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Play)
+export default connect(mapStateToProps, mapDispatchToProps)(LivePlay)

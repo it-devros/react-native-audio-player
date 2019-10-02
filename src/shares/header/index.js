@@ -20,17 +20,21 @@ class Header extends React.Component {
 
   render() {
 
-    const { navigation } = this.props
+    const { navigation, title } = this.props
 
     return(
       <View style={styles.container}>
-        <Image style={styles.logoImage} source={require('../../assets/images/logo.png')} />
-        <View style={styles.titleSection}>
-          <Image style={styles.titleImage} source={require('../../assets/icons/title.png')} />
+        <View style={styles.logoSection}>
+          <Image style={styles.logoImage} source={require('../../assets/images/logo.png')} />
         </View>
-        <TouchableOpacity onPress={() => navigation.openDrawer()}>
-          <Image style={styles.menuIcon} source={require('../../assets/icons/list.png')} />
-        </TouchableOpacity>
+        <View style={styles.titleSection}>
+          <Text style={styles.titleText} numberOfLines={1}>{ title }</Text>
+        </View>
+        <View style={styles.menuSection}>
+          <TouchableOpacity onPress={() => navigation.openDrawer()}>
+            <Image style={styles.menuIcon} source={require('../../assets/icons/list.png')} />
+          </TouchableOpacity>
+        </View>
       </View>
     )
 
