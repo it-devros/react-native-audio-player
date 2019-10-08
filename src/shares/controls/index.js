@@ -8,6 +8,15 @@ import {
 } from 'react-native'
 
 
+import {
+  Loader
+} from '../../components'
+
+import {
+  normalize
+} from '../../helpers'
+
+
 import styles from './style'
 
 
@@ -21,51 +30,34 @@ class Controls extends React.Component {
 
   render() {
 
-    const { live } = this.props
-
     return(
       <View style={styles.container}>
-        {
-          live == false ?
-            <TouchableOpacity activeOpacity={0.0}>
-              <Image style={styles.secondaryControl} source={require('../../assets/icons/shuffle.png')}/>
-            </TouchableOpacity>
-          :
-            null
-        }        
+        <TouchableOpacity activeOpacity={0.0}>
+          <Image style={styles.secondaryControl} source={require('../../assets/icons/shuffle.png')}/>
+        </TouchableOpacity>      
         <View style={styles.width40} />
-        {
-          live == false ?
-            <TouchableOpacity>
-              <Image style={styles.primaryControl} source={require('../../assets/icons/prev.png')}/>
-            </TouchableOpacity>
-          :
-            null
-        }
-        <View style={styles.width20} />
         <TouchableOpacity>
-          <View style={styles.playButton}>
-            <Image style={styles.primaryControl} source={require('../../assets/icons/play_white.png')}/>
-          </View>
+          <Image style={styles.primaryControl} source={require('../../assets/icons/prev.png')}/>
         </TouchableOpacity>
         <View style={styles.width20} />
         {
-          live == false ?
+          this.props.loading == true ?
+            <Loader width={normalize(80)} height={normalize(80)} />
+          :
             <TouchableOpacity>
-              <Image style={styles.primaryControl} source={require('../../assets/icons/next.png')}/>
+              <View style={styles.playButton}>
+                <Image style={styles.primaryControl} source={require('../../assets/icons/play_white.png')}/>
+              </View>
             </TouchableOpacity>
-          :
-            null
         }
+        <View style={styles.width20} />
+        <TouchableOpacity>
+          <Image style={styles.primaryControl} source={require('../../assets/icons/next.png')}/>
+        </TouchableOpacity>
         <View style={styles.width40} />
-        {
-          live == false ?
-            <TouchableOpacity activeOpacity={0.0}>
-              <Image style={styles.secondaryControl} source={require('../../assets/icons/repeat.png')}/>
-            </TouchableOpacity>
-          :
-            null
-        }
+        <TouchableOpacity activeOpacity={0.0}>
+          <Image style={styles.secondaryControl} source={require('../../assets/icons/repeat.png')}/>
+        </TouchableOpacity>
       </View>
     )
 

@@ -61,10 +61,6 @@ class AboutCompany extends React.Component {
             <ScrollView>
               <Text style={styles.titleText}>About Company</Text>
               <Text style={styles.descriptionText}>
-                This is from firebase realtime database. ----
-                { this.props.about_company_content }
-              </Text>
-              <Text style={styles.descriptionText}>
                 Lorem ipsum dolor sit amet, ne qui dicit gloriatur, vim et natum altera dignissim. Doming cotidieque ut has, pri ei sumo quaeque, sit alterum theophrastus deterruisset te. Et accumsan facilisis cum, nec id aliquando honestatis. Cu sonet simul maiorum mea. Vel modo praesent te.
               </Text>
               <Text style={styles.descriptionText}>
