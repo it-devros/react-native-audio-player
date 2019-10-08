@@ -21,3 +21,20 @@ export const raiseErrors = (errors) => {
     })
   }
 }
+
+
+export const startLoading = () => {
+  return (dispatch) => {
+    dispatch({
+      type: COMMON.SERVER_REQUEST
+    })
+  }
+}
+
+export const endLoading = () => {
+  return (dispatch) => {
+    dispatch({
+      type: COMMON.SERVER_SUCCESS
+    })
+  }
+}

@@ -6,6 +6,7 @@ const initState = {
   token: '',
 
   play_list: [],
+  live_play_list: [],
   about_company_content: '',
   current_play: null
 }
@@ -33,6 +34,12 @@ const user = (state = initState, action) => {
       return {
         ...state,
         play_list: Object.assign([], payload.data)
+      }
+    
+    case USER.SET_LIVE_PLAY_LIST:
+      return {
+        ...state,
+        live_play_list: Object.assign([], payload.data)
       }
 
     case USER.SET_ABOUT_COMPANY:

@@ -16,6 +16,8 @@ import io.invertase.firebase.auth.RNFirebaseAuthPackage;
 import io.invertase.firebase.storage.RNFirebaseStoragePackage; 
 import io.invertase.firebase.database.RNFirebaseDatabasePackage;
 
+import com.brentvatne.react.ReactVideoPackage;
+
 
 import java.util.List;
 

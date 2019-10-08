@@ -22,9 +22,38 @@ export const checkAuthStatus = () => {
   }
 }
 
+export const getLivePlayList = () => {
+  return (dispatch) => {
+    dispatch({
+      type: COMMON.SERVER_REQUEST
+    })
+    firebase.database().ref('liveStream/').once('value', snapshot => {
+      let data = snapshot.val()
+      let tempList = []
+      for (key in data) {
+        let temp = Object.assign({}, data[key])
+        temp.id = key
+        tempList.push(temp)
+      }
+      dispatch({
+        type: USER.SET_LIVE_PLAY_LIST,
+        payload: {
+          data: tempList
+        }
+      })
+      dispatch({
+        type: COMMON.SERVER_SUCCESS
+      })
+    })
+  }
+}
+
 
 export const getPlayList = () => {
   return (dispatch) => {
+    dispatch({
+      type: COMMON.SERVER_REQUEST
+    })
     firebase.database().ref('playlist/').once('value', snapshot => {
       let data = snapshot.val()
       let tempList = []
@@ -39,12 +68,18 @@ export const getPlayList = () => {
           data: tempList
         }
       })
+      dispatch({
+        type: COMMON.SERVER_SUCCESS
+      })
     })
   }
 }
 
 export const getAboutCompanyContent = () => {
   return (dispatch) => {
+    dispatch({
+      type: COMMON.SERVER_REQUEST
+    })
     firebase.database().ref('MasterData/').once('value', snapshot => {
       let data = snapshot.val()
       dispatch({
@@ -52,6 +87,9 @@ export const getAboutCompanyContent = () => {
         payload: {
           data: data['aboutcompany']
         }
+      })
+      dispatch({
+        type: COMMON.SERVER_SUCCESS
       })
     })
   }

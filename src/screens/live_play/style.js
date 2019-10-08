@@ -29,14 +29,18 @@ const styles = StyleSheet.create({
     width: width
   },
   playerContent: {
+    width: width,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingTop: normalize(30),
-    paddingBottom: normalize(30)
+    paddingVertical: normalize(30)
   },
   topImage: {
     width: '100%',
     height: '100%'
+  },
+  audioElement: {
+    height: 0,
+    width: 0
   }
 })
 
