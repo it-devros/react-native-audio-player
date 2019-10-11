@@ -9,6 +9,10 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 import {
+  Loader
+} from '../../components'
+
+import {
   Header,
   AudioItem
 } from '../../shares'
@@ -17,6 +21,10 @@ import {
   commonActions,
   userActions
 } from '../../actions'
+
+import {
+  normalize
+} from '../../helpers'
 
 
 import styles from './style'
@@ -52,8 +60,8 @@ class TopChart extends React.Component {
     this.props.userActions.getPlayList()
   }
 
-  startPlay(item) {
-    this.props.userActions.setCurrentPlay(item)
+  startPlay(item, index) {
+    this.props.userActions.setCurrentPlay(item, index)
     this.props.navigation.navigate('Play')
   }
 
@@ -75,6 +83,7 @@ class TopChart extends React.Component {
                           <AudioItem
                             key={`play_item_${index}`}
                             item={item}
+                            index={index}
                             onPress={this.startPlay}
                           />
                         )
@@ -84,9 +93,14 @@ class TopChart extends React.Component {
                 </ScrollView>
               </View>
             :
-              <View style={styles.mainContent}>
-                <Text style={styles.alertText}>No Data</Text>
-              </View>
+              this.props.loading == true ?
+                <View style={styles.mainContent}>
+                  <Loader width={normalize(0)} height={normalize(0)} />
+                </View>
+              :    
+                <View style={styles.mainContent}>
+                  <Text style={styles.alertText}>No Data</Text>
+                </View>
           }
         </View>
       </ImageBackground>

@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     borderColor: 'white',
     borderRadius: normalize(40),
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   primaryControl: {
     height: normalize(25),

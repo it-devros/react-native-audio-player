@@ -95,12 +95,13 @@ export const getAboutCompanyContent = () => {
   }
 }
 
-export const setCurrentPlay = (item) => {
+export const setCurrentPlay = (item, index) => {
   return (dispatch) => {
     dispatch({
       type: USER.SET_CURRENT_PLAY,
       payload: {
-        data: item
+        data: item,
+        index
       }
     })
   }
