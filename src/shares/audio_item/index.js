@@ -20,8 +20,8 @@ class AudioItem extends React.Component {
   }
 
   startPlay() {
-    const { onPress, item } = this.props
-    onPress(item)
+    const { onPress, item, index } = this.props
+    onPress(item, index)
   }
 
   render() {

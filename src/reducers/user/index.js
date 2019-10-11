@@ -8,7 +8,9 @@ const initState = {
   play_list: [],
   live_play_list: [],
   about_company_content: '',
-  current_play: null
+
+  current_play: null,
+  current_index: null
 }
 
 
@@ -51,7 +53,8 @@ const user = (state = initState, action) => {
     case USER.SET_CURRENT_PLAY:
       return {
         ...state,
-        current_play: Object.assign({}, payload.data)
+        current_play: Object.assign({}, payload.data),
+        current_index: payload.index
       }
 
     default:

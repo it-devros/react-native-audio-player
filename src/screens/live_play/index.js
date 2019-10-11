@@ -44,7 +44,7 @@ class LivePlay extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      paused: false,
+      paused: true,
       trackIndex: 0,
 
       totalLength: 0,
@@ -84,9 +84,15 @@ class LivePlay extends React.Component {
   }
 
   onEnd() {
-    this.setState({
-      trackIndex: this.state.trackIndex + 1
-    })
+    if (this.state.trackIndex < this.props.live_play_list.length - 1) {
+      this.setState({
+        trackIndex: this.state.trackIndex + 1
+      })
+    } else {
+      this.setState({
+        trackIndex: 0
+      })
+    }
   }
 
   seek(time) {
@@ -98,7 +104,9 @@ class LivePlay extends React.Component {
     })
   }
 
-  onError() {
+  onError(error) {
+    console.log('error +++++++++ ', error)
+    this.props.commonActions.endLoading()
   }
 
 
